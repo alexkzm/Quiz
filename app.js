@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-angular.module('quizApp', ['ui.router']);
+angular.module('quizApp', ['ui.router'])
 
-.config(function($urlRouterProvider, $stateProvider){
+.config(($urlRouterProvider, $stateProvider) => {
 
 	$stateProvider
 			.state('list', {
@@ -11,17 +11,15 @@ angular.module('quizApp', ['ui.router']);
 				controller:'listController',
 				templateUrl: 'list-tmpl.html'
 				resolve: {
-					bfastFood: function(breakfast) {
-						return breakfast.getFoods();
+					bfastFood: (breakfast) => {
+						return breakfast.getFoods()
 					}
 				}
 			})
-
 			.state('details', {
 				//http://
 				url: '/details/:foodId',
 				controller:'detailsController',
 				templateUrl: 'details-tmpl.html'
 			})
-
-});
+})
