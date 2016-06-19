@@ -22,32 +22,32 @@ app.controller('countCtrl', ($scope, $firebaseObject, $firebaseArray, $firebaseA
 			let serverUser = $firebaseObject(new Firebase(firebaseRoot + '/users/' + uid))
 			serverUser.email = user.email
 			serverUser.$save()
-		}, functon (err) {
+		}, (err) => {
 			condole.log('err', err)
 		})
 
 //Facebook
-	$scope.login = function (user) {
-		auth.$authWithOAuthPopup("google").then(function(abc){
-			var uid = abc.uid;
-			var serverUser = $firebaseObject(new Firebase(firebaseRoot + '/users/' + uid));
-			serverUser.email = user.email;
-			serverUser.$save();
-		}, functon (err) {
-			condole.log('err', err);
-		});
+	$scope.login = (user) => {
+		auth.$authWithOAuthPopup("google").then((abc) => {
+			let uid = abc.uid
+			let serverUser = $firebaseObject(new Firebase(firebaseRoot + '/users/' + uid))
+			serverUser.email = user.email
+			serverUser.$save()
+		}, (err) => {
+			condole.log('err', err)
+		})
 //Twitter
-	$scope.login = function (user) {
+	$scope.login = (user) => {
 		auth.$authWithOAuthPopup("google").then(function(abc){
-			var uid = abc.uid;
-			var serverUser = $firebaseObject(new Firebase(firebaseRoot + '/users/' + uid));
-			serverUser.email = user.email;
-			serverUser.$save();
-		}, functon (err) {
-			condole.log('err', err);
-		});
+			let uid = abc.uid
+			let serverUser = $firebaseObject(new Firebase(firebaseRoot + '/users/' + uid))
+			serverUser.email = user.email
+			serverUser.$save()
+		}, (err) => {
+			condole.log('err', err)
+		})
 
 //Continue as a Guest
 
-});
+})
 
